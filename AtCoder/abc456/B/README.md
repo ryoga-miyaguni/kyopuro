@@ -22,7 +22,29 @@ i個目のサイコロのj個目の面にはA_{i,j}が書かれています。
 - [ ] 🧪 実装のみ参考（ロジックは自力）
 
 ## 考察・学んだこと
-- 
+- 今回書いたコードは正解はしているが、コードがとても読みにくい。sorted を使うことでよりわかりやすく解くことができる
+
+```python
+A = list(map(int, input().split()))
+B = list(map(int, input().split()))
+C = list(map(int, input().split()))
+
+count = 0
+
+# 全ての組み合わせを試す
+for i in A:
+    for j in B:
+        for k in C:
+            # 3つの目をリストにしてソートするか、集合(set)にして比較する
+            if sorted([i, j, k]) == [4, 5, 6]:
+                count += 1
+
+print(count / 216)
+```
+
+- 昇順 (Ascending): sorted([6, 4, 5]) → [4, 5, 6]
+- 降順 (Descending): reverse=True という引数を追加する。sorted([4, 5, 6], reverse=True) → [6, 5, 4]
+- 今回は３つが違う数字であるため set を使うこともできる
 
 ## 関連アルゴリズム
 - 

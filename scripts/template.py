@@ -29,8 +29,7 @@ INF = float('inf')
 MOD = 10 ** 9 + 7
 
 def main():
-    # n = i_input()
-    # a, b = i_map()
+    
     pass
 
 if __name__ == '__main__':

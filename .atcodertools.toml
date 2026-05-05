@@ -8,8 +8,8 @@ template_file = "/Users/ryoga/Desktop/kyopuro/scripts/template.py"
 
 [postprocess]
 # ファイル生成後に実行するコマンド（README作成スクリプトを呼び出す）
-exec_on_each_problem_dir = "python3 /Users/ryoga/Desktop/kyopuro/scripts/init_problem.py {abs_obj_path}"
+exec_on_each_problem_dir = "python /Users/ryoga/Desktop/kyopuro/scripts/init_problem.py {abs_obj_path}"
 
 [tester]
 compile_before_testing = false
-run_command = "python3 main.py"
+run_command = "python main.py"

@@ -30,18 +30,28 @@ MOD = 10 ** 9 + 7
 
 def main():
     N, K = i_map()
-    L = i_row_list(N)
+    A_info = i_row_list(N)  
     C = i_list()
 
-    B = []
-
+    # 各ブロックを順に判定
     for i in range(N):
-
-        P = L[i][1:]
-        for j in range(C[i]):
-            B += P
-    
-    print(B[K-1])
+        # A_info[i][0] が Li、それ以降が実際の数列 Ai
+        L_i = A_info[i][0]
+        A_i = A_info[i][1:]
+        C_i = C[i]
+        
+        # このブロック全体の長さ
+        total_len = L_i * C_i
+        
+        if K <= total_len:
+            # K番目がこのブロック内にある場合
+            # (K-1) % L_i で、数列 Ai 内のどのインデックス（0-indexed）か特定
+            idx = (K - 1) % L_i
+            print(A_i[idx])
+            return
+        else:
+            # このブロックに K番目がなければ、その分を K から引いて次へ
+            K -= total_len
     
     pass
 
